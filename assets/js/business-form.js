@@ -534,7 +534,54 @@ function gotoNextStep(step) {
 			}
 		}
 	}
+	// if (step == 4) {
+	// 	if ($('input[name="register_form"]').val() == 'true') {
+	// 		if ($('input[name="best_way[]"]:checked').length == 0) {
+	// 			$(".alert-step-4").css("display", "block");
+	// 			$(".step-text-4").css("display", "block");
+	// 			isFormValid = false;
+	// 		} else {
+	// 			var values = [];
+	// 			$('input[name="best_way[]"]:checked').each(function () {
+	// 				values.push($(this).val());
+	// 			});
+	// 			if (values) {
+	// 				sessionStorage.setItem("step-4", JSON.stringify(values));
+	// 				console.log(sessionStorage.getItem("step-4"));
+	// 			}
+	// 		}
+	// 	} else {
+	// 		if (!textVailidation(fieldArea.find('input[name="reach_time"]'))) {
+	// 			isFormValid = false;
+	// 		} else {
+	// 			sessionStorage.setItem("reach_time", $('input[name="reach_time"]').val());
+	// 			console.log(sessionStorage.getItem("reach_time"));
+	// 		}
+	// 		if (!textVailidation(fieldArea.find('input[name="reach_date"]'))) {
+	// 			isFormValid = false;
+	// 		} else {
+	// 			sessionStorage.setItem("reach_date", $('input[name="reach_date"]').val());
+	// 			console.log(sessionStorage.getItem("reach_date"));
+	// 		}
+
+	// 		//set feilds
+	// 		$("input[name='final_fname']").val(sessionStorage.getItem("fname"));
+	// 		$("input[name='final_lname']").val(sessionStorage.getItem("lname"));
+	// 		$("input[name='final_email']").val(sessionStorage.getItem("email"));
+	// 		$("input[name='final_city']").val(sessionStorage.getItem("city"));
+	// 		$("input[name='final_country']").val(sessionStorage.getItem("country"));
+	// 		$("input[name='final_phone']").val(sessionStorage.getItem("phone"));
+	// 		$("input[name='final_zip_code']").val(sessionStorage.getItem("zip_code"));
+	// 		$("input[name='company_position']").val(sessionStorage.getItem("company_position"));
+	// 		$("#final_state_id option:selected").val(sessionStorage.getItem("state"));
+
+
+
+	// 	}
+	// }
 	if (step == 4) {
+
+
 		if ($('input[name="register_form"]').val() == 'true') {
 			if ($('input[name="best_way[]"]:checked').length == 0) {
 				$(".alert-step-4").css("display", "block");
@@ -563,23 +610,7 @@ function gotoNextStep(step) {
 				sessionStorage.setItem("reach_date", $('input[name="reach_date"]').val());
 				console.log(sessionStorage.getItem("reach_date"));
 			}
-
-			//set feilds
-			$("input[name='final_fname']").val(sessionStorage.getItem("fname"));
-			$("input[name='final_lname']").val(sessionStorage.getItem("lname"));
-			$("input[name='final_email']").val(sessionStorage.getItem("email"));
-			$("input[name='final_city']").val(sessionStorage.getItem("city"));
-			$("input[name='final_country']").val(sessionStorage.getItem("country"));
-			$("input[name='final_phone']").val(sessionStorage.getItem("phone"));
-			$("input[name='final_zip_code']").val(sessionStorage.getItem("zip_code"));
-			$("input[name='company_position']").val(sessionStorage.getItem("company_position"));
-			$("#final_state_id option:selected").val(sessionStorage.getItem("state"));
-
-
-
 		}
-	}
-	if (step == 5) {
 
 		let customer_fname = sessionStorage.getItem("fname");
 		$("span#customer_firstname").html('').html(customer_fname);

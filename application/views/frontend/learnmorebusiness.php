@@ -701,7 +701,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Alarm System" data-label="Home Automation">
+                                    <input type="checkbox" name="system_type[]" value="Security Fences" data-label="Home Automation">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">

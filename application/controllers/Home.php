@@ -41,7 +41,7 @@ class Home extends CI_Controller {
 
 	// Load Learn More Business View
 	public function learnMoreBusiness() {
-		$data['countries'] = $this->db->get('countries')->result_array();
+		$data['countries'] = $this->db->from('countries')->order_by("name", "asc")->get()->result_array();
 		// echo '<pre>';
 		// print_r($countries);
 		// echo '<pre>'; 
@@ -54,7 +54,7 @@ class Home extends CI_Controller {
 
 	// Load Learn More Residential View
 	public function learnMoreResidential() {
-		$data['countries'] = $this->db->get('countries')->result_array();
+		$data['countries'] = $this->db->from('countries')->order_by("name", "asc")->get()->result_array();
 		$data['pageTitle'] = "AnyTime Security | LearnMore Residential";
         $this->load->view('frontend_includes/header', $data);
 		$this->load->view('frontend/learnmoreresidential', $data);
@@ -290,13 +290,14 @@ class Home extends CI_Controller {
 	}
 
 	function getStates($country) {
-		$countries = $this->db->get_where('states', ['country_id'=>$country])->result_array();
+		//$countries = $this->db->get_where('states', ['country_id'=>$country])->result_array();
+		$countries = $this->db->from('states')->where(['country_id'=>$country])->order_by("name", "asc")->get()->result_array();
 		echo json_encode(['countries' => $countries]); exit;
 	}
 
 	function getCities($country, $state) {
-		$cities = $this->db->get_where('cities', ['country_id'=>$country, 'state_id'=>$state])->result_array();
-		//echo $this->db->last_query(); exit;
+		//$cities = $this->db->get_where('cities', ['country_id'=>$country, 'state_id'=>$state])->result_array();
+		$cities = $this->db->from('cities')->where(['country_id'=>$country, 'state_id'=>$state])->order_by("name", "asc")->get()->result_array();
 		echo json_encode(['cities' => $cities]); exit;
 	}
 	
