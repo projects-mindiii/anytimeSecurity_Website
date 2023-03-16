@@ -840,12 +840,10 @@
                                        </label>
                                     </div>
                                  </div>
-
-
                                  <div class="col-md-3">
                                     <div class="form-group select-feild">
                                        <label class="checkbox">
-                                          <input type="checkbox" name="service_type[]" value="Computer Network Security" data-label="Personal Security Device">
+                                          <input type="checkbox" name="service_type[]" value="Security Fences" data-label="Personal Security Device">
                                           <span class="checkmark"></span>
                                           <div class="proClsd">
                                              <div class="imgClsd">
@@ -858,7 +856,6 @@
                                        </label>
                                     </div>
                                  </div>
-
                               </div>
                            </div>
                            <!-- <div class="col-md-7">
@@ -1259,7 +1256,7 @@
                               <div class="review-step fnDetail" style="display: none;">
                                  <div class="review-area">
                                     <img src="<?php echo base_url() ?>assets/images/privacy.png" style="margin-top: 5px;" />
-                                    <p>Privacy</p>
+                                    <p>Privacy</p>phpdotenv
                                     <p class="review-text">Check box to approve us to share your request with our
                                        approved serive providers in your area</p>
                                  </div>
