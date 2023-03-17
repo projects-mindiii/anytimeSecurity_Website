@@ -11,3 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	https://codeigniter.com/user_guide/general/hooks.html
 |
 */
+
+
+$hook['pre_system'] = array(
+    'class'    => 'Credential_hook',
+    'function' => 'load_credential',
+    'filename' => 'Credential_hook.php',
+    'filepath' => 'hooks'
+);

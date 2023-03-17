@@ -139,7 +139,7 @@
                                 padding: 5px;
                               "
                             >
-                              <b><?php echo $k?> : </b><?php echo $v;?>
+                              <b><?php echo $k+1?> : </b><?php echo $v;?>
                             </p>
                               <?php }
                             }
@@ -199,7 +199,7 @@
                                 padding: 5px;
                               "
                             >
-                              <b><?php echo $k?> : </b><?php echo $v;?>
+                              <b><?php echo $k+1?> : </b><?php echo $v;?>
                             </p>
                               <?php }
                             }
@@ -260,7 +260,7 @@
                                 padding: 5px;
                               "
                             >
-                              <b><?php echo $k?> : </b><?php echo $v;?>
+                              <b><?php echo $k+1?> : </b><?php echo $v;?>
                             </p>
                               <?php }
                             }
