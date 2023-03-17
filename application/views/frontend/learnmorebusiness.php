@@ -571,7 +571,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Alarm System" data-label="Home Automation">
+                                    <input type="checkbox" name="system_type[]" value="Alarm System" data-label="Alarm System">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -603,7 +603,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Lights" data-label="Alarm System">
+                                    <input type="checkbox" name="system_type[]" value="Security Lights" data-label="Security Lights">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -619,7 +619,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Mobile Phone Security" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Mobile Phone Security" data-label="Mobile Phone Security">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -637,7 +637,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Access Control Systems" data-label="Health, Medical System">
+                                    <input type="checkbox" name="system_type[]" value="Access Control Systems" data-label="Access Control Systems">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -653,7 +653,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Guards" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Security Guards" data-label="Security Guards">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -669,7 +669,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Gates" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Security Gates" data-label="Security Gates">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -685,7 +685,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Computer Network Security" data-label="Personal Security Device">
+                                    <input type="checkbox" name="system_type[]" value="Computer Network Security" data-label="Computer Network Security">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -701,7 +701,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Fences" data-label="Home Automation">
+                                    <input type="checkbox" name="system_type[]" value="Security Fences" data-label="Security Fences">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">

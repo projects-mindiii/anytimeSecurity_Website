@@ -66,16 +66,17 @@ class Home extends CI_Controller {
 
 		$config = Array(
 			'protocol' => 'smtp',
-			'smtp_host' => 'sandbox.smtp.mailtrap.io',
-			'smtp_port' => 2525,
-			'smtp_user' => '107d1c675213e6',
-			'smtp_pass' => '3e6fa72792e4be',
+			'smtp_host' => getenv('MAIL_HOST'),
+			'smtp_port' => getenv('MAIL_PORT'),
+			'smtp_user' => getenv('MAIL_USERNAME'),
+			'smtp_pass' => getenv('MAIL_PASSWORD'),
 			'mailtype' => 'html',
 			'charset' => 'iso-8859-1',
 			'wordwrap' => TRUE,
 			'crlf' => "\r\n",
 			'newline' => "\r\n"
 		  );
+
 
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -95,8 +96,8 @@ class Home extends CI_Controller {
 		
 		
 
-		$to = 'rajmander.mindii@gmail.com';
-		$to2=$email; 
+		// $to = 'rajmander.mindii@gmail.com';
+		// $to2=$email; 
 		$subject = 'From Anytime Security';
 
 		$data['businessDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
@@ -111,8 +112,8 @@ class Home extends CI_Controller {
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
-		$this->email->from('ajay13kmindiii@gmail.com'); 
-		$this->email->to('ajay13kmindiii@gmail.com');
+		$this->email->from(getenv('FROM_MAIL')); 
+		$this->email->to(getenv('TO_MAIL'));
 		$this->email->subject($subject);
 		$this->email->message($message);
 		// redirect(base_url('learn-more-business'));
@@ -131,10 +132,10 @@ class Home extends CI_Controller {
 	function sendResidentialEmail() {
 		$config = Array(
 			'protocol' => 'smtp',
-			'smtp_host' => 'sandbox.smtp.mailtrap.io',
-			'smtp_port' => 2525,
-			'smtp_user' => '107d1c675213e6',
-			'smtp_pass' => '3e6fa72792e4be',
+			'smtp_host' => getenv('MAIL_HOST'),
+			'smtp_port' => getenv('MAIL_PORT'),
+			'smtp_user' => getenv('MAIL_USERNAME'),
+			'smtp_pass' => getenv('MAIL_PASSWORD'),
 			'mailtype' => 'html',
 			'charset' => 'iso-8859-1',
 			'wordwrap' => TRUE,
@@ -158,8 +159,8 @@ class Home extends CI_Controller {
 		$homeowner = $this->input->post('homeowner');
 
 		// Send details
-		$to = 'rajmander.mindii@gmail.com';
-		$to2=$email; 
+		// $to = 'rajmander.mindii@gmail.com';
+		// $to2=$email; 
 		$subject = 'From Anytime Security';
 
 		$data['residentialsDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
@@ -172,30 +173,32 @@ class Home extends CI_Controller {
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
-		$this->email->from('rajmander.mindii@gmail.com'); 
-		$this->email->to('rajmander.mindii@gmail.com');
+		$this->email->from(getenv('FROM_MAIL')); 
+		$this->email->to(getenv('TO_MAIL'));
 		$this->email->subject($subject);
 		$this->email->message($message);
-		$this->email->send();
-		redirect(base_url('learn-more-residential'));
-		// if($this->email->send())
-		// {
-		// 	redirect(base_url('learn-more-business'));
-		// }
-		// else
-		// {
-		// 	show_error($this->email->print_debugger());
-		// }
+		//$this->email->send();
+		//redirect(base_url('learn-more-residential'));
+		if($this->email->send())
+		{
+			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
+		}
+		else
+		{
+	        echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
+			// show_error($this->email->print_debugger());
+		}
 	}
 
 	// Send Support Email
 	function sendSupportEmail() {
+
 		$config = Array(
 			'protocol' => 'smtp',
-			'smtp_host' => 'sandbox.smtp.mailtrap.io',
-			'smtp_port' => 2525,
-			'smtp_user' => '107d1c675213e6',
-			'smtp_pass' => '3e6fa72792e4be',
+			'smtp_host' => getenv('MAIL_HOST'),
+			'smtp_port' => getenv('MAIL_PORT'),
+			'smtp_user' => getenv('MAIL_USERNAME'),
+			'smtp_pass' => getenv('MAIL_PASSWORD'),
 			'mailtype' => 'html',
 			'charset' => 'iso-8859-1',
 			'wordwrap' => TRUE,
@@ -226,12 +229,9 @@ class Home extends CI_Controller {
 		$buss_mailing_addr = $this->input->post('buss_mailing_addr');
 
 		
-		
-		
-
 		// Send details
-		$to = 'rajmander.mindii@gmail.com';
-		$to2=$email; 
+		// $to = 'rajmander.mindii@gmail.com';
+		// $to2=$email; 
 		$subject = 'From Anytime Security';
 
 		$data['supportDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
@@ -249,20 +249,21 @@ class Home extends CI_Controller {
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
-		$this->email->from('rajmander.mindii@gmail.com'); 
-		$this->email->to('rajmander.mindii@gmail.com');
+		$this->email->from(getenv('FROM_MAIL')); 
+		$this->email->to(getenv('TO_MAIL'));
 		$this->email->subject($subject);
 		$this->email->message($message);
-		$this->email->send();
-		redirect(base_url('solution-provider'));
-		// if($this->email->send())
-		// {
-		// 	redirect(base_url('learn-more-business'));
-		// }
-		// else
-		// {
-		// 	show_error($this->email->print_debugger());
-		// }
+		// $this->email->send();
+		// redirect(base_url('solution-provider'));
+		if($this->email->send())
+		{
+			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
+		}
+		else
+		{
+	        echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
+			// show_error($this->email->print_debugger());
+		}
 	}
 	
 
