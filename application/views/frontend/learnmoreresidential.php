@@ -567,7 +567,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Medical Alert Systems" data-label="Video Security System">
+                                    <input type="checkbox" name="system_type[]" value="Medical Alert Systems" data-label="Medical Alert Systems">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -599,7 +599,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Video Security System" data-label="Health, Medical System">
+                                    <input type="checkbox" name="system_type[]" value="Video Security System" data-label="Video Security System">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -617,7 +617,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Personal Security Devices" data-label="Personal Security Device">
+                                    <input type="checkbox" name="system_type[]" value="Personal Security Devices" data-label="Personal Security Devices">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -633,7 +633,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Lights" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Security Lights" data-label="Security Lights">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -649,7 +649,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Digital Lock Systems" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Digital Lock Systems" data-label="Digital Lock Systems">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -665,7 +665,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Computer Network Security" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Computer Network Security" data-label="Computer Network Security">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -683,7 +683,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Mobile Phone Security" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Mobile Phone Security" data-label="Mobile Phone Security">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -699,7 +699,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Guards" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Security Guards" data-label="Security Guards">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -715,7 +715,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Gates" data-label="Computers and Networking Security">
+                                    <input type="checkbox" name="system_type[]" value="Security Gates" data-label="Security Gates">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -731,7 +731,7 @@
                            <div class="col-md-3">
                               <div class="form-group select-feild">
                                  <label class="checkbox">
-                                    <input type="checkbox" name="system_type[]" value="Security Fences" data-label="Home Automation">
+                                    <input type="checkbox" name="system_type[]" value="Security Fences" data-label="Security Fences">
                                     <span class="checkmark"></span>
                                     <div class="proClsd">
                                        <div class="imgClsd">
@@ -1349,7 +1349,7 @@
             e.preventDefault();
             var formData = $(this).serialize();
             $.ajax({
-               url: `<?php echo base_url('home/sendBusinessEmail') ?>`,
+               url: `<?php echo base_url('send-residential-email') ?>`,
                type: 'post',
                data: formData,
                dataType: 'json',
