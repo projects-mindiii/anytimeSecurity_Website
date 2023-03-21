@@ -761,7 +761,7 @@
                                        <input type="text" id="company_position" name="position" class="form-control custom-form" placeholder="Position in company*" >
                                     </div> -->
                               <div class="form-group">
-                                 <input type="text" name="phone" class="form-control custom-form" placeholder="Phone*">
+                                 <input type="text" id="phone_number" maxlength="20" name="phone" class="form-control custom-form" placeholder="Phone*">
                                  <!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
                               </div>
                               <div class="form-group">
@@ -1151,7 +1151,7 @@
          e.preventDefault();
          var formData = $(this).serialize();
          $.ajax({
-            url: `<?php echo base_url('home/sendBusinessEmail') ?>`,
+            url: `<?php echo base_url('send-business-email') ?>`,
             type: 'post',
             data: formData,
             dataType: 'json',
@@ -1192,4 +1192,12 @@
    $(document).ajaxStop(function() {
       $('.loader').hide();
    });
+
+   $('#phone_number').keyup(function() {
+         var phone_number = $(this).val().replace(/[^0-9]/g, '');
+         if (phone_number.length > 0) {
+            phone_number = phone_number.match(new RegExp('.{1,3}', 'g')).join('-');
+         }
+         $(this).val(phone_number);
+      });
 </script>

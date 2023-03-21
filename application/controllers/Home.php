@@ -117,6 +117,7 @@ class Home extends CI_Controller {
 		$this->email->subject($subject);
 		$this->email->message($message);
 		// redirect(base_url('learn-more-business'));
+       
 		if($this->email->send())
 		{
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
@@ -276,6 +277,7 @@ class Home extends CI_Controller {
 			exit;
 		}
 		$data['pageTitle'] = "AnyTime Security | Contact Us";
+		$data['countries'] = $this->db->from('countries')->order_by("name", "asc")->get()->result_array();
         $this->load->view('frontend_includes/header', $data);
 		$this->load->view('frontend/contactus');
 		$this->load->view('frontend_includes/footer');

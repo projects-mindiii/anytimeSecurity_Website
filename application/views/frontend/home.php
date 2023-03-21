@@ -89,7 +89,7 @@
 <p class="about-text"> <i class="fa fa-quote-left" style="font-size:15px;"></i><br>
 Anytime Security connects people and businessess that are looking for security solutions to validated solution providers.	We currently service Canada and the USA only. Our process is simple please fill out the form below to request a free visit. <br> 
 
-<a href="javascript:;learnmore.html" class="btn btn-o custom-btn btn-blue m-t-20 w150"> FREE VISIT</a> <br>If you are a solution provider and you want to join the Anytime Security service provider partnership program. Please click the button below to register as a solution provider. <br> <a href="javascript:;register.html" class="btn btn-o custom-btn btn-blue m-t-20"><i class="fa fa-hand-pointer-o"></i> REGISTER</a>
+ <br>If you are a solution provider and you want to join the Anytime Security service provider partnership program. Please click the button below to register as a solution provider. <br> 
 
 
 							<i class="fa fa-quote-right" style="font-size:15px;"></i>
