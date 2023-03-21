@@ -67,3 +67,5 @@ $route['solution-provider'] = 'home/customerRegister';
 
 $route['get-states/(:num)'] = 'home/getStates/$1';
 $route['get-cities/(:num)/(:num)'] = 'home/getCities/$1/$2';
+
+
