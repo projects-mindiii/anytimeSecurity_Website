@@ -3,6 +3,8 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
 		$this->load->database();
+		 // Load PHPMailer library
+		 $this->load->library('phpmailer_library');
     }
 
     public function index() {
@@ -64,19 +66,6 @@ class Home extends CI_Controller {
 	// Send Business Email
 	function sendBusinessEmail() {
 
-		$config = Array(
-			'protocol' => 'smtp',
-			'smtp_host' => getenv('MAIL_HOST'),
-			'smtp_port' => getenv('MAIL_PORT'),
-			'smtp_user' => getenv('MAIL_USERNAME'),
-			'smtp_pass' => getenv('MAIL_PASSWORD'),
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'wordwrap' => TRUE,
-			'crlf' => "\r\n",
-			'newline' => "\r\n"
-		  );
-
 
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -92,56 +81,31 @@ class Home extends CI_Controller {
 		$reach_date = $this->input->post('reach_date');
 		$reach_time = $this->input->post('reach_time');
 		
-		
-		
-		
-
-		// $to = 'rajmander.mindii@gmail.com';
-		// $to2=$email; 
-		$subject = 'From Anytime Security';
-
 		$data['businessDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
 									'phone'=>$phone, 'country'=>$country, 'state'=>$state,
 									'city'=>$city, 'zip_code'=>$zip_code, 'position'=>$position, 
 									'system_type'=>$system_type, 'best_way'=>$best_way, 
 									'reach_date'=>$reach_date, 'reach_time'=>$reach_time];
 
-		  $message = $this->load->view('EmailTemplates/FrontEnd/business_email_template', $data ,TRUE); 
+		$message = $this->load->view('EmailTemplates/FrontEnd/business_email_template', $data ,TRUE); 
 		  
-        
+		$subject = 'From Anytime Security';
 
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-		$this->email->from(getenv('FROM_MAIL')); 
-		$this->email->to(getenv('TO_MAIL'));
-		$this->email->subject($subject);
-		$this->email->message($message);
-		// redirect(base_url('learn-more-business'));
-		if($this->email->send())
+		$mail_res = $this->phpmailer_library->send_mail($email,$subject,$message);
+       
+		if($mail_res)
 		{
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
 		}
 		else
 		{
 	        echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
-			// show_error($this->email->print_debugger());
 		}
 	}
 
 	// Send Residential Mail
 	function sendResidentialEmail() {
-		$config = Array(
-			'protocol' => 'smtp',
-			'smtp_host' => getenv('MAIL_HOST'),
-			'smtp_port' => getenv('MAIL_PORT'),
-			'smtp_user' => getenv('MAIL_USERNAME'),
-			'smtp_pass' => getenv('MAIL_PASSWORD'),
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'wordwrap' => TRUE,
-			'crlf' => "\r\n",
-			'newline' => "\r\n"
-		  );
+		
 
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -158,10 +122,6 @@ class Home extends CI_Controller {
 		$reach_time = $this->input->post('reach_time');
 		$homeowner = $this->input->post('homeowner');
 
-		// Send details
-		// $to = 'rajmander.mindii@gmail.com';
-		// $to2=$email; 
-		$subject = 'From Anytime Security';
 
 		$data['residentialsDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
 									'phone'=>$phone, 'country'=>$country, 'state'=>$state,
@@ -171,40 +131,22 @@ class Home extends CI_Controller {
 
 		$message = $this->load->view('EmailTemplates/FrontEnd/residential_email_template', $data ,TRUE);
 
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-		$this->email->from(getenv('FROM_MAIL')); 
-		$this->email->to(getenv('TO_MAIL'));
-		$this->email->subject($subject);
-		$this->email->message($message);
-		//$this->email->send();
-		//redirect(base_url('learn-more-residential'));
-		if($this->email->send())
+		$subject = 'From Anytime Security';
+
+		$mail_res = $this->phpmailer_library->send_mail($email,$subject,$message);
+       
+		if($mail_res)
 		{
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
 		}
 		else
 		{
 	        echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
-			// show_error($this->email->print_debugger());
 		}
 	}
 
 	// Send Support Email
 	function sendSupportEmail() {
-
-		$config = Array(
-			'protocol' => 'smtp',
-			'smtp_host' => getenv('MAIL_HOST'),
-			'smtp_port' => getenv('MAIL_PORT'),
-			'smtp_user' => getenv('MAIL_USERNAME'),
-			'smtp_pass' => getenv('MAIL_PASSWORD'),
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'wordwrap' => TRUE,
-			'crlf' => "\r\n",
-			'newline' => "\r\n"
-		  );
 
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
@@ -228,11 +170,6 @@ class Home extends CI_Controller {
 		$years_in_business = $this->input->post('years_in_business');
 		$buss_mailing_addr = $this->input->post('buss_mailing_addr');
 
-		
-		// Send details
-		// $to = 'rajmander.mindii@gmail.com';
-		// $to2=$email; 
-		$subject = 'From Anytime Security';
 
 		$data['supportDetails'] = ['fname'=>$fname, 'lname'=>$lname, 'email'=>$email, 
 									'phone'=>$phone, 'country'=>$country, 'state'=>$state,
@@ -245,25 +182,19 @@ class Home extends CI_Controller {
 
 		 $message = $this->load->view('EmailTemplates/FrontEnd/support_email_template', $data ,TRUE); 
 
+		 $subject = 'From Anytime Security';
 
+		 $mail_res = $this->phpmailer_library->send_mail($email,$subject,$message);
+		
+		 if($mail_res)
+		 {
+			 echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
+		 }
+		 else
+		 {
+			 echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
+		 }
 
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-		$this->email->from(getenv('FROM_MAIL')); 
-		$this->email->to(getenv('TO_MAIL'));
-		$this->email->subject($subject);
-		$this->email->message($message);
-		// $this->email->send();
-		// redirect(base_url('solution-provider'));
-		if($this->email->send())
-		{
-			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
-		}
-		else
-		{
-	        echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
-			// show_error($this->email->print_debugger());
-		}
 	}
 	
 
@@ -276,6 +207,7 @@ class Home extends CI_Controller {
 			exit;
 		}
 		$data['pageTitle'] = "AnyTime Security | Contact Us";
+		$data['countries'] = $this->db->from('countries')->order_by("name", "asc")->get()->result_array();
         $this->load->view('frontend_includes/header', $data);
 		$this->load->view('frontend/contactus');
 		$this->load->view('frontend_includes/footer');
@@ -300,6 +232,19 @@ class Home extends CI_Controller {
 		//$cities = $this->db->get_where('cities', ['country_id'=>$country, 'state_id'=>$state])->result_array();
 		$cities = $this->db->from('cities')->where(['country_id'=>$country, 'state_id'=>$state])->order_by("name", "asc")->get()->result_array();
 		echo json_encode(['cities' => $cities]); exit;
+	}
+
+	function send_test_mail()
+	{
+		
+			
+			
+			 // PHPMailer object
+			 $mail = $this->phpmailer_library->send_mail('suraj.mindiii@gmail.com','Test Mail','Test Mail');
+
+			 print_r($mail);
+			 
+		
 	}
 	
 }

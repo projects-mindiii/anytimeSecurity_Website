@@ -791,7 +791,7 @@
                                     <input type="text" name="company_position" class="form-control custom-form" placeholder="Position in company*" required>
                                  </div> -->
                               <div class="form-group">
-                                 <input type="text" name="phone" class="form-control custom-form" placeholder="Phone*" required>
+                                 <input type="text" id="phone_number" maxlength="20" name="phone" class="form-control custom-form" placeholder="Phone*" required>
 
                               </div>
 
@@ -1358,7 +1358,8 @@
                      $('#thank-you-popup1').fadeIn();
 
                      setTimeout(function() {
-                        window.location.reload()
+                        window.location.href = "<?=site_url();?>";
+                        //window.location.reload();
                      }, 3000);
 
                   } else {
@@ -1387,5 +1388,13 @@
 
       $(document).ajaxStop(function() {
          $('.loader').hide();
+      });
+
+      $('#phone_number').keyup(function() {
+         var phone_number = $(this).val().replace(/[^0-9]/g, '');
+         if (phone_number.length > 0) {
+            phone_number = phone_number.match(new RegExp('.{1,3}', 'g')).join('-');
+         }
+         $(this).val(phone_number);
       });
    </script>
