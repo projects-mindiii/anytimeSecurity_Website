@@ -1160,7 +1160,8 @@
                   $('#thank-you-popup1').fadeIn();
 
                   setTimeout(function() {
-                     window.location.reload()
+                     window.location.href = "<?=site_url();?>";
+                     //window.location.reload()
                   }, 3000);
 
                } else {

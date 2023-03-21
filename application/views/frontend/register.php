@@ -1335,7 +1335,8 @@
 
                   setTimeout(function() {
                      if (response.redirect) {
-                        window.location.href = response.redirect;
+                        window.location.href = "<?=site_url();?>";
+                       // window.location.href = response.redirect;
                      }
                   }, 3000);
 

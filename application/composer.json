@@ -12,12 +12,13 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"vlucas/phpdotenv": "^v3.6.0"
+		"vlucas/phpdotenv": "^v3.6.0",
+		"phpmailer/phpmailer": "^6.8"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
 	},
 	"require-dev": {
-		"mikey179/vfsStream": "1.1.*"
+		"mikey179/vfsstream": "1.1.*"
 	}
 }

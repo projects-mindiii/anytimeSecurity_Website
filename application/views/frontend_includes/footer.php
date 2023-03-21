@@ -1,12 +1,14 @@
 <footer class="row" id="footer">
 	<div class="col-md-12">
 		<div class="col-md-6">
-			<p class="logo-area">
+			<p class="logo-area" style="display: inline-block;">
 				<a href="<?php echo base_url() ?>">
 					<img src="<?php echo base_url() ?>assets/images/Logo-bottom.png" alt="anytimesecurity.com" class="logo-img">
 					<span class="footer-logo-text">AnytimeSecurity.com<br><small class="pull-right">"your security is our business"</small></span>
 				</a>
 			</p>
+			<br>
+			<p id="siteseal" style="text-align: center;"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=AiRqx6k11cCqbNqGmIfS4cxv8tkQ4FQ85jmNBDtYP7E2stfp20cw6Hd9BQIu"></script></p>
 		</div>
 		<div class="col-md-6">
 			<nav class="footer-nav-area hidden-xs">
@@ -34,9 +36,7 @@
 		</button>
 		<p class="m-t-50">Copyright 2018. AnytimeSecurity.com, All right reserved </p> 
 	</div>
-	<span style="padding-left: 40px;" id="siteseal">
-			<script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=AiRqx6k11cCqbNqGmIfS4cxv8tkQ4FQ85jmNBDtYP7E2stfp20cw6Hd9BQIu"></script>
-	</span>
+	
 </footer>
 <script type="text/javascript">
 	/*$(".link-tab").click(function(e) {
