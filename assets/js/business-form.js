@@ -835,13 +835,15 @@ function radioVailidation(field) {
 function isZipCode(field) {
 	var fieldVal = field.val();
 	console.log(fieldVal);
-	var isValidZip = /(^\d{6}$)|(^\d{6}-\d{4}$)/.test(fieldVal);
+	// var isValidZip = /(^\d{6}$)|(^\d{6}-\d{4}$)/.test(fieldVal);
+	var isValidZip = /^[A-Za-z0-9? ,_-]{3,9}$/.test(fieldVal);
 	return isValidZip;
 
 }
 
 function phoneNumber(inputtxt) {
-  	var phoneno = /^\d{10}$/;
+  	//var phoneno = /^\d{10}$/;
+	var phoneno = /^(\d+-?)+\d+$/;
   	if(inputtxt.match(phoneno)){
       return true;
     }else{

@@ -993,7 +993,7 @@
                                  </select>
                               </div>
                               <div class="form-group">
-                                 <input type="text" name="zip_code" class="form-control custom-form" placeholder="Zip Code*">
+                                 <input type="text" name="zip_code" class="form-control custom-form" maxlength="9" placeholder="Zip Code*">
                               </div>
                            </div>
                         </div>
@@ -1330,14 +1330,13 @@
             data: formData,
             dataType: 'json',
             success: function(response) {
-               if (response) {
+               if (response.status == true) {
                   $('#thank-you-popup1').fadeIn();
 
                   setTimeout(function() {
-                     if (response.redirect) {
-                        window.location.href = "<?=site_url();?>";
-                       // window.location.href = response.redirect;
-                     }
+                     window.location.href = "<?=site_url();?>";
+                     // window.location.href = response.redirect;
+                     
                   }, 3000);
 
                } else {
@@ -1348,13 +1347,13 @@
                }
 
             },
-            // error: function(response) {
-            //    // handle error response
-            //    $('#thank-you-popup2').fadeIn();
-            //       setTimeout(function() {
-            //          popupMessage.classList.add('hidden');
-            //       }, 1000);
-            // }
+            error: function(response) {
+               // handle error response
+               $('#thank-you-popup2').fadeIn();
+                  setTimeout(function() {
+                     window.location.reload();
+                  }, 3000);
+            }
          });
       });
    });

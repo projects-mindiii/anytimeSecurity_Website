@@ -237,14 +237,37 @@ class Home extends CI_Controller {
 	function send_test_mail()
 	{
 		
-			
-			
 			 // PHPMailer object
-			 $mail = $this->phpmailer_library->send_mail('suraj.mindiii@gmail.com','Test Mail','Test Mail');
-
-			 print_r($mail);
+		$mail = $this->phpmailer_library->send_mail('suraj.mindiii@gmail.com','Test Mail','Test Mail');
+		print_r($mail);
 			 
+	}
+
+	function send_test_email()
+	{
 		
+		$config = Array(
+			'protocol' => 'smtp',
+			'smtp_host' => getenv('MAIL_HOST'),
+			'smtp_port' => getenv('MAIL_PORT'),
+			'smtp_user' => getenv('MAIL_USERNAME'),
+			'smtp_pass' => getenv('MAIL_PASSWORD'),
+			'mailtype' => 'html',
+			'charset' => 'iso-8859-1',
+			'wordwrap' => TRUE,
+			'crlf' => "\r\n"
+		  );
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+		$this->email->from('noreply@anytimesecurity.ca'); 
+		$this->email->to('suraj.mindiii@gmail.com');
+		$this->email->subject('Test E-Mail');
+		$this->email->message('Test E-Mail');
+		$mail=$this->email->send();
+
+		print_r($mail);
+			 
 	}
 	
 }
