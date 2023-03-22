@@ -939,7 +939,7 @@
                                     <input type="text" name="city" class="form-control custom-form" placeholder="City*" required>
                                  </div> -->
                               <div class="form-group">
-                                 <input type="text" name="zip_code" class="form-control custom-form" placeholder="Zip Code*" required>
+                                 <input type="text" name="zip_code" class="form-control custom-form" placeholder="Zip Code*" maxlength="9" required>
                               </div>
                               <div class="form-group">
                                  <select name="homeowner" id="homeowner" class="form-control custom-form">
@@ -1354,7 +1354,7 @@
                data: formData,
                dataType: 'json',
                success: function(response) {
-                  if (response.status) {
+                  if (response.status==true) {
                      $('#thank-you-popup1').fadeIn();
 
                      setTimeout(function() {
@@ -1370,13 +1370,13 @@
                   }
 
                },
-               // error: function(response) {
-               //    // handle error response
-               //    $('#thank-you-popup2').fadeIn();
-               //       setTimeout(function() {
-               //          popupMessage.classList.add('hidden');
-               //       }, 1000);
-               // }
+               error: function(response) {
+                  // handle error response
+                  $('#thank-you-popup2').fadeIn();
+                     setTimeout(function() {
+                        window.location.reload();
+                     }, 1000);
+               }
             });
          });
       });

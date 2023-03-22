@@ -841,7 +841,7 @@
                                  </select>
                               </div>
                               <div class="form-group">
-                                 <input type="text" name="zip_code" class="form-control custom-form" placeholder="Zip Code*">
+                                 <input type="text" name="zip_code" class="form-control custom-form"  maxlength="9" placeholder="Zip Code*">
                               </div>
                            </div>
                         </div>
@@ -1138,7 +1138,7 @@
 <script src="<?php echo base_url() ?>assets/js/business-form.js" type="text/javascript"></script>
 <div id="thank-you-popup1" style="display:none;">
    <h2>Thank You!</h2>
-   <a class="close" href="#">&times;</a>
+   <!-- <a class="close" href="#">&times;</a> -->
    <p>Your request has been submitted successfully.</p>
 </div>
 <div id="thank-you-popup2" style="display:none;">
@@ -1156,7 +1156,7 @@
             data: formData,
             dataType: 'json',
             success: function(response) {
-               if (response.status) {
+               if (response.status == true) {
                   $('#thank-you-popup1').fadeIn();
 
                   setTimeout(function() {
@@ -1172,13 +1172,13 @@
                }
 
             },
-            // error: function(response) {
-            //    // handle error response
-            //    $('#thank-you-popup2').fadeIn();
-            //       setTimeout(function() {
-            //          popupMessage.classList.add('hidden');
-            //       }, 1000);
-            // }
+            error: function(response) {
+               // handle error response
+               $('#thank-you-popup2').fadeIn();
+                  setTimeout(function() {
+                     window.location.reload();
+                  }, 1000);
+            }
          });
 
 

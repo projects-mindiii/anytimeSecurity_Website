@@ -39,16 +39,18 @@
 									<input type="text" name="lname" class="form-control custom-form" placeholder="Last Name" required>
 								</div>
 							</div>
-							<div class="form-group">
-								<input type="email" name="email" class="form-control custom-form " placeholder="Email Address" required>
-							</div>
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
-									<input type="text" id="phone_number" name="phone" class="form-control custom-form" maxlength="20" placeholder="Phone*">
-									<!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
+								<input type="email" name="email" class="form-control custom-form " placeholder="Email Address" required>
 								</div>
 							</div>
 							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+								<div class="form-group">
+									<input type="text" id="phone_number" name="phone" class="form-control custom-form" maxlength="22" placeholder="Phone*">
+									<!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
+								</div>
+							</div>
+							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
 									<!-- <input type="text" name="country" class="form-control custom-form" placeholder="Country*" required=""> -->
 									<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
@@ -62,28 +64,43 @@
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<select name="state" id="states" class="form-control custom-form">
-									<option value="" disabled selected>Select State*</option>
-								</select>
-								<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+								<div class="form-group">
+									<select name="state" id="states" class="form-control custom-form">
+										<option value="" disabled selected>Select State*</option>
+									</select>
+									<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+								</div>
 							</div>
-							<div class="form-group">
-								<!-- <input type="text" name="city" class="form-control custom-form" placeholder="City*"> -->
+							<div class="col-md-6 p-r-0 p-l-0">
+								<div class="form-group">
+									<!-- <input type="text" name="city" class="form-control custom-form" placeholder="City*"> -->
 								<select name="city" id="city" class="form-control custom-form">
 									<option value="" disabled selected>Select City*</option>
 								</select>
+								</div>
 							</div>
-							<div class="form-group">
-								<input type="text" name="zip_code" class="form-control custom-form" value="" placeholder="Zip Code" required>
+							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+								<div class="form-group">
+								<input type="text" name="zip_code" class="form-control custom-form" value=""  maxlength="9" placeholder="Zip Code" required>
+								</div>
 							</div>
 							<div>
 								<div class="alert alert-danger alert-step-4" style="display: none"> Please select something </div>
 								<div class="row resultstep-4 resultstep-c">
 									<div class="col-lg-6 ">
-										<div class="form-group"> <label class="font-4x text-theme-color">Best Time and Date to Reach You</label> <input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time"> </div>
-										<div class="form-group"> <input type="text" name="reach_date" class="form-control custom-form datepicker" placeholder="Date" readonly="readonly"> </div>
+										<div class="form-group"> <label class="font-4x text-theme-color">Best Time and Date to Reach You</label> </div>
 									</div>
+								</div>
+							</div>
+							<div class="col-md-6 p-r-0 p-l-0">
+								<div class="form-group">
+									<input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time"> 
+								</div>
+							</div>
+							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+								<div class="form-group">
+									<input type="text" name="reach_date" class="form-control custom-form datepicker" placeholder="Date" readonly="readonly">
 								</div>
 							</div>
 							<div>
