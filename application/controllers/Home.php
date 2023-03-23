@@ -252,6 +252,7 @@ class Home extends CI_Controller {
 			'smtp_port' => getenv('MAIL_PORT'),
 			'smtp_user' => getenv('MAIL_USERNAME'),
 			'smtp_pass' => getenv('MAIL_PASSWORD'),
+			'smtp_crypto'=>'ssl',
 			'mailtype' => 'html',
 			'charset' => 'iso-8859-1',
 			'wordwrap' => TRUE,
@@ -268,6 +269,11 @@ class Home extends CI_Controller {
 
 		print_r($mail);
 			 
+	}
+
+	function php_info()
+	{
+		phpinfo();
 	}
 	
 }
