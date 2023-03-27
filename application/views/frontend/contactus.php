@@ -27,7 +27,7 @@
 					</p>
 				</div>
 				<div class="col-md-6">
-					<form role="form" action="<?php echo base_url('contact-us') ?>" method="POST" enctype="multipart/form-data" id="contactus_form">
+					<form role="form" action="<?php echo base_url('contact-us-save') ?>" method="POST" enctype="multipart/form-data" id="contactus_form">
 						<div class="col-md-12">
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
@@ -114,13 +114,14 @@
 	</div>
 </div>
 <script src="<?php echo base_url('assets/js/jquery.validate.min.js') ?>"></script>
-<script src="<?php echo base_url() ?>assets/js/business-form.js" type="text/javascript"></script>
+<script src="<?php echo base_url() ?>assets/js/contact_form.js" type="text/javascript"></script>
 
 
 
 
 <!-- Validate Contact Us Form -->
 <script>
+	
 	$.validator.addMethod("isEmail", function(value, element) {
 		// allow any non-whitespace characters as the host part
 		return this.optional(element) || /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value);
@@ -128,12 +129,14 @@
 
 	$.validator.addMethod("isPhone", function(value, element) {
 		// allow any non-whitespace characters as the host part
-		return this.optional(element) || /^\d{10}$/.test(value);
+		//return this.optional(element) || /^\d{10}$/.test(value);
+		return this.optional(element) || /^(\d+-?)+\d+$/.test(value);
 	}, 'Please enter a valid phone.');
 
 	$.validator.addMethod("isZipcode", function(value, element) {
 		// allow any non-whitespace characters as the host part
-		return this.optional(element) || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
+		//return this.optional(element) || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
+		return this.optional(element) || /^[A-Za-z0-9? ,_-]{3,9}$/.test(value);
 	}, 'Please enter a valid zipcode.');
 
 
@@ -149,7 +152,7 @@
 			},
 			phone: {
 				required: true,
-				number: true,
+				//number: true,
 				isPhone: true
 			},
 			country: 'required',
@@ -185,6 +188,12 @@
 			},
 			zip_code: {
 				required: "Zip Code is required"
+			},
+			reach_date: {
+				required: "Date is required"
+			},
+			reach_time: {
+				required: "Time is required"
 			}
 		},
 		submitHandler: function(form, event) {
