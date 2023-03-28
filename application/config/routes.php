@@ -63,6 +63,7 @@ $route['send-residential-email'] = 'home/sendResidentialEmail';
 $route['send-support-email'] = 'home/sendSupportEmail';
 
 $route['contact-us'] = 'home/contactUsForm';
+$route['contact-us-save'] = 'home/contactUsFormSave';
 $route['solution-provider'] = 'home/customerRegister';
 
 $route['get-states/(:num)'] = 'home/getStates/$1';
