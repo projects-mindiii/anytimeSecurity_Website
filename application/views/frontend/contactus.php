@@ -2,8 +2,63 @@
 	label {
 		font-weight: normal !important
 	}
-	.col-lg-6{
+
+	.col-lg-6 {
 		width: 100%;
+	}
+
+	#thank-you-popup1 {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: green;
+		border: 1px solid #ccc;
+		padding: 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		z-index: 9999;
+		color: white;
+	}
+
+	#thank-you-popup2 {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: red;
+		border: 1px solid #ccc;
+		padding: 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		z-index: 9999;
+		color: white;
+	}
+
+	.loaderShade {
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: 0.8;
+		overflow: hidden;
+		z-index: 999;
+	}
+
+	.loader {
+		background: #00000017;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+	}
+
+	.loader img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 99999;
+		width: 100px;
 	}
 </style>
 <div class="container-fluid">
@@ -31,17 +86,17 @@
 						<div class="col-md-12">
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
-									<input type="text" name="fname" class="form-control custom-form" placeholder="First Name" required>
+									<input type="text" name="fname" class="form-control custom-form" placeholder="First Name">
 								</div>
 							</div>
 							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
 								<div class="form-group">
-									<input type="text" name="lname" class="form-control custom-form" placeholder="Last Name" required>
+									<input type="text" name="lname" class="form-control custom-form" placeholder="Last Name">
 								</div>
 							</div>
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
-								<input type="email" name="email" class="form-control custom-form " placeholder="Email Address" required>
+									<input type="email" name="email" class="form-control custom-form " placeholder="Email Address">
 								</div>
 							</div>
 							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
@@ -75,14 +130,14 @@
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
 									<!-- <input type="text" name="city" class="form-control custom-form" placeholder="City*"> -->
-								<select name="city" id="city" class="form-control custom-form">
-									<option value="" disabled selected>Select City*</option>
-								</select>
+									<select name="city" id="city" class="form-control custom-form">
+										<option value="" disabled selected>Select City*</option>
+									</select>
 								</div>
 							</div>
 							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
 								<div class="form-group">
-								<input type="text" name="zip_code" class="form-control custom-form" value=""  maxlength="9" placeholder="Zip Code" required>
+									<input type="text" name="zip_code" class="form-control custom-form" value="" maxlength="9" placeholder="Zip Code">
 								</div>
 							</div>
 							<div>
@@ -95,7 +150,7 @@
 							</div>
 							<div class="col-md-6 p-r-0 p-l-0">
 								<div class="form-group">
-									<input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time"> 
+									<input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time">
 								</div>
 							</div>
 							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
@@ -105,6 +160,9 @@
 							</div>
 							<div>
 								<button type="submit" class="btn btn-full-width btn-blue">Submit</button>
+							</div>
+							<div class="loader loaderShade" style="display: none;">
+								<img src="<?php echo base_url('assets/Thumbnails/allsecurity/loading.gif') ?>" alt="">
 							</div>
 						</div>
 					</form>
@@ -120,8 +178,63 @@
 
 
 <!-- Validate Contact Us Form -->
+
+
+<div id="thank-you-popup1" style="display:none;">
+	<h2>Thank You!</h2>
+	<!-- <a class="close" href="#">&times;</a> -->
+	<p>Your request has been submitted successfully.</p>
+</div>
+<div id="thank-you-popup2" style="display:none;">
+	<h2>Alert !</h2>
+	<p>your request has not been submitted successfully.</p>
+</div>
 <script>
-	
+	// $(document).ready(function() {
+	// 	$("#contactus_form").submit(function(e) {
+	// 		e.preventDefault();
+	// 		var formData = $(this).serialize();
+	// 		$.ajax({
+	// 			url: `<?php echo base_url('contact-us-save') ?>`,
+	// 			type: 'post',
+	// 			data: formData,
+	// 			dataType: 'json',
+	// 			success: function(response) {
+	// 				if (response.status == true) {
+	// 					$('#thank-you-popup1').fadeIn();
+
+	// 					setTimeout(function() {
+	// 						window.location.href = "<?= site_url(); ?>";
+	// 						//window.location.reload()
+	// 					}, 3000);
+
+	// 				} else {
+	// 					$('#thank-you-popup2').fadeIn();
+	// 					setTimeout(function() {
+	// 						window.location.reload();
+	// 					}, 3000);
+	// 				}
+
+	// 			},
+	// 			error: function(response) {
+	// 				// handle error response
+	// 				$('#thank-you-popup2').fadeIn();
+	// 				setTimeout(function() {
+	// 					window.location.reload();
+	// 				}, 1000);
+	// 			}
+	// 		});
+	// 	});
+	// });
+
+	$(document).ajaxStart(function() {
+		$('.loader').show();
+	});
+
+	$(document).ajaxStop(function() {
+		$('.loader').hide();
+	});
+
 	$.validator.addMethod("isEmail", function(value, element) {
 		// allow any non-whitespace characters as the host part
 		return this.optional(element) || /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value);
@@ -138,9 +251,6 @@
 		//return this.optional(element) || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
 		return this.optional(element) || /^[A-Za-z0-9? ,_-]{3,9}$/.test(value);
 	}, 'Please enter a valid zipcode.');
-
-
-
 
 	$('form#contactus_form').validate({
 		rules: {
@@ -161,7 +271,9 @@
 			zip_code: {
 				required: true,
 				isZipcode: true
-			}
+			},
+			reach_date: 'required',
+			reach_time: 'required',
 		},
 		messages: {
 			fname: {
@@ -175,7 +287,7 @@
 			},
 			phone: {
 				required: "Phone is required",
-				number: "Enter Number only"
+				number: "Enter Number contact-us-saveonly"
 			},
 			country: {
 				required: "Country is required"
@@ -196,9 +308,41 @@
 				required: "Time is required"
 			}
 		},
-		submitHandler: function(form, event) {
-			event.preventDefault();
-			form.submit();
+		submitHandler: function(form) {
+			$("#contactus_form").submit(function(e) {
+				e.preventDefault();
+				var formData = $(this).serialize();
+				$.ajax({
+					url: `<?php echo base_url('contact-us-save') ?>`,
+					type: 'post',
+					data: formData,
+					dataType: 'json',
+					success: function(response) {
+						if (response.status == true) {
+							$('#thank-you-popup1').fadeIn();
+
+							setTimeout(function() {
+								window.location.href = "<?= site_url(); ?>";
+								//window.location.reload()
+							}, 3000);
+
+						} else {
+							$('#thank-you-popup2').fadeIn();
+							setTimeout(function() {
+								window.location.reload();
+							}, 3000);
+						}
+
+					},
+					error: function(response) {
+						// handle error response
+						$('#thank-you-popup2').fadeIn();
+						setTimeout(function() {
+							window.location.reload();
+						}, 1000);
+					}
+				});
+			});
 		}
 	});
 

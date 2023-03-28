@@ -217,14 +217,10 @@ class Home extends CI_Controller
 	// Contact us Form
 	function contactUsFormSave()
 	{
-
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
-
-		
-		
 		$country = $this->input->post('country');
 		$country_name = $this->db->from('countries')->where(['id' => $country])->get()->row()->name;
 		$state = $this->input->post('state');
@@ -235,7 +231,6 @@ class Home extends CI_Controller
 		$reach_date = $this->input->post('reach_date');
 		$reach_time = $this->input->post('reach_time');
 
-
 		$data['supportDetails'] = [
 			'fname' => $fname, 'lname' => $lname, 'email' => $email,
 			'phone' => $phone, 'country' => $country_name, 'state' => $state_name,
@@ -243,19 +238,19 @@ class Home extends CI_Controller
 			'reach_time' => $reach_time
 		];
 
-		$this->load->view('EmailTemplates/FrontEnd/contactus_email_template', $data);
+		// $this->load->view('EmailTemplates/FrontEnd/contactus_email_template', $data);
 		
-		// $message = $this->load->view('EmailTemplates/FrontEnd/contactus_email_template', $data, TRUE);
+		$message = $this->load->view('EmailTemplates/FrontEnd/contactus_email_template', $data, TRUE);
 
-		// $subject = 'From Anytime Security';
+		$subject = 'From Anytime Security';
 
-		// $mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
 
-		// if ($mail_res) {
-		// 	echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
-		// } else {
-		// 	echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
-		// }
+		if ($mail_res) {
+			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
+		} else {
+			echo json_encode(array('status' => false, 'message' => 'Error submitting form.'));
+		}
 	}
 
 	// Register
