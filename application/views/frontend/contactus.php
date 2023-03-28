@@ -287,7 +287,7 @@
 			},
 			phone: {
 				required: "Phone is required",
-				number: "Enter Number contact-us-saveonly"
+				number: "Enter Number only"
 			},
 			country: {
 				required: "Country is required"
@@ -322,8 +322,8 @@
 							$('#thank-you-popup1').fadeIn();
 
 							setTimeout(function() {
-								window.location.href = "<?= site_url(); ?>";
-								//window.location.reload()
+								// window.location.href = "<?= site_url(); ?>";
+								window.location.reload()
 							}, 3000);
 
 						} else {
