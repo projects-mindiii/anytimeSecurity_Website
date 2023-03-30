@@ -761,7 +761,7 @@
                                        <input type="text" id="company_position" name="position" class="form-control custom-form" placeholder="Position in company*" >
                                     </div> -->
                               <div class="form-group">
-                                 <input type="text" id="phone_number" maxlength="20" name="phone" class="form-control custom-form" placeholder="Phone*">
+                                 <input type="text" id="phone_number" maxlength="23" name="phone" class="form-control custom-form" placeholder="Phone*">
                                  <!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
                               </div>
                               <div class="form-group">

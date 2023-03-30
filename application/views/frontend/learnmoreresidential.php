@@ -791,7 +791,7 @@
                                     <input type="text" name="company_position" class="form-control custom-form" placeholder="Position in company*" required>
                                  </div> -->
                               <div class="form-group">
-                                 <input type="text" id="phone_number" maxlength="20" name="phone" class="form-control custom-form" placeholder="Phone*" required>
+                                 <input type="text" id="phone_number" maxlength="23" name="phone" class="form-control custom-form" placeholder="Phone*" required>
 
                               </div>
 
