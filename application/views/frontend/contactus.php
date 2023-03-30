@@ -84,82 +84,95 @@
 				<div class="col-md-6">
 					<form role="form" action="<?php echo base_url('contact-us-save') ?>" method="POST" enctype="multipart/form-data" id="contactus_form">
 						<div class="col-md-12">
-							<div class="col-md-6 p-r-0 p-l-0">
-								<div class="form-group">
-									<input type="text" name="fname" class="form-control custom-form" placeholder="First Name">
+							<div class="row">
+
+							</div>
+							<div class="row">
+								<div class="col-md-6 p-r-0 p-l-0">
+									<div class="form-group">
+										<input type="text" name="fname" class="form-control custom-form" placeholder="First Name">
+									</div>
+								</div>
+								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+									<div class="form-group">
+										<input type="text" name="lname" class="form-control custom-form" placeholder="Last Name">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
-								<div class="form-group">
-									<input type="text" name="lname" class="form-control custom-form" placeholder="Last Name">
+							<div class="row">
+								<div class="col-md-6 p-r-0 p-l-0">
+									<div class="form-group">
+										<input type="email" name="email" class="form-control custom-form " placeholder="Email Address">
+									</div>
+								</div>
+								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+									<div class="form-group">
+										<input type="text" id="phone_number" name="phone" class="form-control custom-form" maxlength="23" placeholder="Phone*">
+										<!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-r-0 p-l-0">
-								<div class="form-group">
-									<input type="email" name="email" class="form-control custom-form " placeholder="Email Address">
+							<div class="row">
+								<div class="col-md-6 p-r-0 p-l-0">
+									<div class="form-group">
+										<!-- <input type="text" name="country" class="form-control custom-form" placeholder="Country*" required=""> -->
+										<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+										<select name="country" id="country" class="form-control custom-form">
+											<option value="" selected>Select Country*</option>
+											<?php
+											foreach ($countries as $c) { ?>
+												<option value="<?php echo $c['id'] ?>"><?php echo $c['name'] ?></option>
+											<?php }
+											?>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+									<div class="form-group">
+										<select name="state" id="states" class="form-control custom-form">
+											<option value="" disabled selected>Select State*</option>
+										</select>
+										<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
-								<div class="form-group">
-									<input type="text" id="phone_number" name="phone" class="form-control custom-form" maxlength="22" placeholder="Phone*">
-									<!--  <img src="assets/Thumbnails/contact/Phone.png" height="70px" width="100px"> -->
+							<div class="row">
+								<div class="col-md-6 p-r-0 p-l-0">
+									<div class="form-group">
+										<!-- <input type="text" name="city" class="form-control custom-form" placeholder="City*"> -->
+										<select name="city" id="city" class="form-control custom-form">
+											<option value="" disabled selected>Select City*</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+									<div class="form-group">
+										<input type="text" name="zip_code" class="form-control custom-form" value="" maxlength="9" placeholder="Zip Code">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-r-0 p-l-0">
-								<div class="form-group">
-									<!-- <input type="text" name="country" class="form-control custom-form" placeholder="Country*" required=""> -->
-									<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
-									<select name="country" id="country" class="form-control custom-form">
-										<option value="" selected>Select Country*</option>
-										<?php
-										foreach ($countries as $c) { ?>
-											<option value="<?php echo $c['id'] ?>"><?php echo $c['name'] ?></option>
-										<?php }
-										?>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
-								<div class="form-group">
-									<select name="state" id="states" class="form-control custom-form">
-										<option value="" disabled selected>Select State*</option>
-									</select>
-									<!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
-								</div>
-							</div>
-							<div class="col-md-6 p-r-0 p-l-0">
-								<div class="form-group">
-									<!-- <input type="text" name="city" class="form-control custom-form" placeholder="City*"> -->
-									<select name="city" id="city" class="form-control custom-form">
-										<option value="" disabled selected>Select City*</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
-								<div class="form-group">
-									<input type="text" name="zip_code" class="form-control custom-form" value="" maxlength="9" placeholder="Zip Code">
-								</div>
-							</div>
-							<div>
-								<div class="alert alert-danger alert-step-4" style="display: none"> Please select something </div>
-								<div class="row resultstep-4 resultstep-c">
-									<div class="col-lg-6 ">
+							<div class="row">
+								<div class=" resultstep-4 resultstep-c">
+									<div class="">
 										<div class="form-group"> <label class="font-4x text-theme-color">Best Time and Date to Reach You</label> </div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-r-0 p-l-0">
-								<div class="form-group">
-									<input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time">
+							<div class="row">
+								<div class="col-md-6 p-r-0 p-l-0">
+									<div class="form-group">
+										<input type="text" name="reach_time" class="form-control custom-form timepicker" placeholder="Time">
+									</div>
+								</div>
+								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+									<div class="form-group">
+										<input type="text" name="reach_date" class="form-control custom-form datepicker" placeholder="Date" readonly="readonly">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
-								<div class="form-group">
-									<input type="text" name="reach_date" class="form-control custom-form datepicker" placeholder="Date" readonly="readonly">
-								</div>
-							</div>
-							<div>
-								<button type="submit" class="btn btn-full-width btn-blue">Submit</button>
+
+							<div class="row">
+								<button type="submit" class="btn btn-full-width btn-blue" value="submit">Submit</button>
 							</div>
 							<div class="loader loaderShade" style="display: none;">
 								<img src="<?php echo base_url('assets/Thumbnails/allsecurity/loading.gif') ?>" alt="">
@@ -190,43 +203,6 @@
 	<p>your request has not been submitted successfully.</p>
 </div>
 <script>
-	// $(document).ready(function() {
-	// 	$("#contactus_form").submit(function(e) {
-	// 		e.preventDefault();
-	// 		var formData = $(this).serialize();
-	// 		$.ajax({
-	// 			url: `<?php echo base_url('contact-us-save') ?>`,
-	// 			type: 'post',
-	// 			data: formData,
-	// 			dataType: 'json',
-	// 			success: function(response) {
-	// 				if (response.status == true) {
-	// 					$('#thank-you-popup1').fadeIn();
-
-	// 					setTimeout(function() {
-	// 						window.location.href = "<?= site_url(); ?>";
-	// 						//window.location.reload()
-	// 					}, 3000);
-
-	// 				} else {
-	// 					$('#thank-you-popup2').fadeIn();
-	// 					setTimeout(function() {
-	// 						window.location.reload();
-	// 					}, 3000);
-	// 				}
-
-	// 			},
-	// 			error: function(response) {
-	// 				// handle error response
-	// 				$('#thank-you-popup2').fadeIn();
-	// 				setTimeout(function() {
-	// 					window.location.reload();
-	// 				}, 1000);
-	// 			}
-	// 		});
-	// 	});
-	// });
-
 	$(document).ajaxStart(function() {
 		$('.loader').show();
 	});
@@ -252,66 +228,67 @@
 		return this.optional(element) || /^[A-Za-z0-9? ,_-]{3,9}$/.test(value);
 	}, 'Please enter a valid zipcode.');
 
-	$('form#contactus_form').validate({
-		rules: {
-			fname: 'required',
-			lname: 'required',
-			email: {
-				required: true,
-				isEmail: true
+	$(document).ready(function() {
+
+		$('#contactus_form').validate({
+			rules: {
+				fname: 'required',
+				lname: 'required',
+				email: {
+					required: true,
+					isEmail: true
+				},
+				phone: {
+					required: true,
+					//number: true,
+					isPhone: true
+				},
+				country: 'required',
+				state: 'required',
+				city: 'required',
+				zip_code: {
+					required: true,
+					isZipcode: true
+				},
+				reach_date: 'required',
+				reach_time: 'required',
 			},
-			phone: {
-				required: true,
-				//number: true,
-				isPhone: true
+			messages: {
+				fname: {
+					required: 'First Name is required'
+				},
+				lname: {
+					required: 'Last Name is required'
+				},
+				email: {
+					required: "Email is required"
+				},
+				phone: {
+					required: "Phone is required",
+					number: "Enter Number only"
+				},
+				country: {
+					required: "Country is required"
+				},
+				state: {
+					required: 'State is required'
+				},
+				city: {
+					required: "City is required"
+				},
+				zip_code: {
+					required: "Zip Code is required"
+				},
+				reach_date: {
+					required: "Date is required"
+				},
+				reach_time: {
+					required: "Time is required"
+				}
 			},
-			country: 'required',
-			state: 'required',
-			city: 'required',
-			zip_code: {
-				required: true,
-				isZipcode: true
-			},
-			reach_date: 'required',
-			reach_time: 'required',
-		},
-		messages: {
-			fname: {
-				required: 'First Name is required'
-			},
-			lname: {
-				required: 'Last Name is required'
-			},
-			email: {
-				required: "Email is required"
-			},
-			phone: {
-				required: "Phone is required",
-				number: "Enter Number only"
-			},
-			country: {
-				required: "Country is required"
-			},
-			state: {
-				required: 'State is required'
-			},
-			city: {
-				required: "City is required"
-			},
-			zip_code: {
-				required: "Zip Code is required"
-			},
-			reach_date: {
-				required: "Date is required"
-			},
-			reach_time: {
-				required: "Time is required"
-			}
-		},
-		submitHandler: function(form) {
-			$("#contactus_form").submit(function(e) {
-				e.preventDefault();
-				var formData = $(this).serialize();
+			submitHandler: function(form) {
+
+				var formData = $(form).serialize();
 				$.ajax({
 					url: `<?php echo base_url('contact-us-save') ?>`,
 					type: 'post',
@@ -342,8 +319,9 @@
 						}, 1000);
 					}
 				});
-			});
-		}
+
+			}
+		});
 	});
 
 
