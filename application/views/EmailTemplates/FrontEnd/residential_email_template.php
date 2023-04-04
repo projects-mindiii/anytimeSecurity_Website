@@ -274,36 +274,6 @@
                               <td>
                                 <p
                                   style="
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 16px;
-                                    padding-left: 22px;
-                                    font-size: 13px;
-                                  "
-                                >
-                                  <b>CITY</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php echo ucwords($residentialsDetails['city'])?>
-                                </p>
-                              </td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div style="display: flex">
-                              <td>
-                                <p
-                                  style="
                                     font-size: 13px;
                                     color: #202020;
                                     margin: 0px;
@@ -325,32 +295,6 @@
                                   "
                                 >
                                 <?php echo ucwords($residentialsDetails['lname'])?>
-                                </p>
-                              </td>
-                              <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>ZIP CODE</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php echo $residentialsDetails['zip_code']?>
                                 </p>
                               </td>
                             </div>
@@ -409,62 +353,10 @@
                                 <?php echo $residentialsDetails['phone']?>
                                 </p>
                               </td>
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>POSITION</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  HR
-                                </p>
-                              </td> -->
                             </div>
                           </tr>
                           <tr>
                             <div style="display: flex">
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>PHONE</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php //echo $residentialsDetails['phone']?>
-                                </p>
-                              </td> -->
                               <td>
                                 <p
                                   style="
@@ -519,20 +411,21 @@
                               </td>
                             </div>
                           </tr>
+
                           <tr>
                             <div style="display: flex">
-                              <!-- <td>
+                              <td>
                                 <p
                                   style="
-                                    font-size: 13px;
                                     color: #202020;
                                     margin: 0px;
                                     line-height: 27px;
-                                    padding-top: 10px;
+                                    padding-top: 16px;
                                     padding-left: 22px;
+                                    font-size: 13px;
                                   "
                                 >
-                                  <b>STATE</b>
+                                  <b>CITY</b>
                                 </p>
                                 <p
                                   style="
@@ -544,9 +437,39 @@
                                     padding-left: 22px;
                                   "
                                 >
-                                <?php echo $residentialsDetails['state']?>
+                                <?php echo ucwords($residentialsDetails['city'])?>
                                 </p>
-                              </td> -->
+                              </td>
+                              <td>
+                                <p
+                                  style="
+                                    font-size: 13px;
+                                    color: #202020;
+                                    margin: 0px;
+                                    line-height: 27px;
+                                    padding-top: 10px;
+                                    padding-left: 22px;
+                                  "
+                                >
+                                  <b>HOME OWNERSHIP</b>
+                                </p>
+                                <p
+                                  style="
+                                    font-size: 13px;
+                                    color: #202020;
+                                    margin: 0px;
+                                    line-height: 15px;
+                                    padding-bottom: 20px;
+                                    padding-left: 22px;
+                                  "
+                                >
+                                <?php echo $residentialsDetails['homeowner']?>
+                                </p>
+                              </td>
+                            </div>
+                          </tr>
+                          <tr>
+                            <div style="display: flex">
                               <td>
                                 <p
                                   style="
@@ -599,37 +522,6 @@
                                 <?php echo $residentialsDetails['reach_time']?>
                                 </p>
                               </td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div style="display: flex">
-                              <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>HOME OWNERSHIP</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-                                    padding-bottom: 20px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php echo $residentialsDetails['homeowner']?>
-                                </p>
-                              </td>
-                             
                             </div>
                           </tr>
                         </table>
