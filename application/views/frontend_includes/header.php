@@ -71,7 +71,7 @@
 		      	<ul class="nav navbar-nav navbar-custom-style">
 		        	<li><a href="<?php echo base_url('')?>#aboutus">About</a></li>
 		        	<li><a href="<?php echo base_url('privacy-policy')?>">Privacy</a></li>
-		        	<li><a href="<?php echo base_url('learn-more')?>" >Get Quote</a></li>
+		        	<li><a href="<?php echo base_url('')?>" >Get Quote</a></li>
 		        	<li><a href="<?php echo base_url('')?>#solution-provider">Solution Providers</a></li>
 		        	<li><a href="<?php echo base_url('contact-us')?>" >Contact</a></li>
 		      </ul>

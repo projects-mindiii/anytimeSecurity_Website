@@ -82,7 +82,7 @@ class Home extends CI_Controller
 		$country = $this->input->post('country_name');
 		$state = $this->input->post('state_name');
 		$city = $this->input->post('city_name');
-		$zip_code = $this->input->post('zip_code');
+		// $zip_code = $this->input->post('zip_code');
 		$position = $this->input->post('company_position');
 		$system_type = $this->input->post('system_type');
 		$best_way = $this->input->post('best_way');
@@ -92,7 +92,7 @@ class Home extends CI_Controller
 		$data['businessDetails'] = [
 			'fname' => $fname, 'lname' => $lname, 'email' => $email,
 			'phone' => $phone, 'country' => $country, 'state' => $state,
-			'city' => $city, 'zip_code' => $zip_code, 'position' => $position,
+			'city' => $city, 'position' => $position,
 			'system_type' => $system_type, 'best_way' => $best_way,
 			'reach_date' => $reach_date, 'reach_time' => $reach_time
 		];
@@ -122,7 +122,7 @@ class Home extends CI_Controller
 		$country = $this->input->post('country_name');
 		$state = $this->input->post('state_name');
 		$city = $this->input->post('city_name');
-		$zip_code = $this->input->post('zip_code');
+		// $zip_code = $this->input->post('zip_code');
 
 		$system_type = $this->input->post('system_type');
 		$best_way = $this->input->post('best_way');
@@ -134,7 +134,7 @@ class Home extends CI_Controller
 		$data['residentialsDetails'] = [
 			'fname' => $fname, 'lname' => $lname, 'email' => $email,
 			'phone' => $phone, 'country' => $country, 'state' => $state,
-			'city' => $city, 'zip_code' => $zip_code, 'system_type' => $system_type,
+			'city' => $city, 'system_type' => $system_type,
 			'best_way' => $best_way, 'reach_date' => $reach_date,
 			'reach_time' => $reach_time, 'homeowner' => $homeowner
 		];
@@ -163,7 +163,7 @@ class Home extends CI_Controller
 		$country = $this->input->post('country_name');
 		$state = $this->input->post('state_name');
 		$city = $this->input->post('city_name');
-		$zip_code = $this->input->post('zip_code');
+		// $zip_code = $this->input->post('zip_code');
 
 		$system_type = $this->input->post('system_type');
 		$best_way = $this->input->post('best_way');
@@ -182,7 +182,7 @@ class Home extends CI_Controller
 		$data['supportDetails'] = [
 			'fname' => $fname, 'lname' => $lname, 'email' => $email,
 			'phone' => $phone, 'country' => $country, 'state' => $state,
-			'city' => $city, 'zip_code' => $zip_code, 'system_type' => $system_type,
+			'city' => $city, 'system_type' => $system_type,
 			'best_way' => $best_way, 'reach_date' => $reach_date,
 			'reach_time' => $reach_time, 'company_name' => $company_name, 'position' => $position,
 			'years_in_business' => $years_in_business, 'buss_mailing_addr' => $buss_mailing_addr,
@@ -227,14 +227,14 @@ class Home extends CI_Controller
 		$state_name = $this->db->from('states')->where(['id' => $state])->get()->row()->name;
 		$city = $this->input->post('city');
 		$city_name = $this->db->from('cities')->where(['id' => $city])->get()->row()->name;
-		$zip_code = $this->input->post('zip_code');
+		// $zip_code = $this->input->post('zip_code');
 		$reach_date = $this->input->post('reach_date');
 		$reach_time = $this->input->post('reach_time');
 
 		$data['supportDetails'] = [
 			'fname' => $fname, 'lname' => $lname, 'email' => $email,
 			'phone' => $phone, 'country' => $country_name, 'state' => $state_name,
-			'city' => $city_name, 'zip_code' => $zip_code, 'reach_date' => $reach_date,
+			'city' => $city_name, 'reach_date' => $reach_date,
 			'reach_time' => $reach_time
 		];
 

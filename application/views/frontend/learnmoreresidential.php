@@ -938,9 +938,9 @@
                                  <div class="form-group">
                                     <input type="text" name="city" class="form-control custom-form" placeholder="City*" required>
                                  </div> -->
-                              <div class="form-group">
+                              <!-- <div class="form-group">
                                  <input type="text" name="zip_code" class="form-control custom-form" placeholder="Zip Code*" maxlength="9" required>
-                              </div>
+                              </div> -->
                               <div class="form-group">
                                  <select name="homeowner" id="homeowner" class="form-control custom-form">
                                     <option value="">Homeownership*</option>
@@ -1221,12 +1221,12 @@
                               <span id="customer_city">Indore</span>
                            </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                            <div class="fnClod">
                               <h3>Zip-Code</h3>
                               <span id="customer_zipcode">220075</span>
                            </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                            <div class="fnClod">
                               <h3>HomeOwnerShip</h3>

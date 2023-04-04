@@ -840,9 +840,9 @@
                                     <option value="" disabled selected>Select City*</option>
                                  </select>
                               </div>
-                              <div class="form-group">
+                              <!-- <div class="form-group">
                                  <input type="text" name="zip_code" class="form-control custom-form"  maxlength="9" placeholder="Zip Code*">
-                              </div>
+                              </div> -->
                            </div>
                         </div>
                         <div class="m-t-20">
@@ -1031,12 +1031,12 @@
                                  <span id="customer_city">Indore</span>
                               </div>
                            </div>
-                           <div class="form-group">
+                           <!-- <div class="form-group">
                               <div class="fnClod">
                                  <h3>Zip-Code</h3>
                                  <span id="customer_zipcode">220075</span>
                               </div>
-                           </div>
+                           </div> -->
                            <div class="form-group fnHeading">
                               <h3>Best-Way</h3>
                               <!-- <p>0 : <span>text_Message</span></p>
