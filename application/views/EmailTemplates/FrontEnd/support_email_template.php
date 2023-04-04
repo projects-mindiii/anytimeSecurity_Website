@@ -1,6 +1,5 @@
 <!-- @format -->
 <!-- @format -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -332,36 +331,7 @@
                                 <?php echo ucwords($supportDetails['fname'])?>
                                 </p>
                               </td>
-                              <td>
-                                <p
-                                  style="
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 16px;
-                                    padding-left: 22px;
-                                    font-size: 13px;
-                                  "
-                                >
-                                  <b>CITY</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
 
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php echo ucwords($supportDetails['city'])?>
-                                </p>
-                              </td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div style="display: flex">
                               <td>
                                 <p
                                   style="
@@ -386,32 +356,6 @@
                                   "
                                 >
                                 <?php echo ucwords($supportDetails['lname'])?>
-                                </p>
-                              </td>
-                              <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>ZIP CODE</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php echo $supportDetails['zip_code']?>
                                 </p>
                               </td>
                             </div>
@@ -470,32 +414,6 @@
                                 <?php echo $supportDetails['phone']?>
                                 </p>
                               </td>
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>POSITION</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  HR
-                                </p>
-                              </td> -->
                             </div>
                           </tr>
                           <tr>
@@ -552,32 +470,6 @@
                                 <?php echo $supportDetails['position']?>
                                 </p>
                               </td>
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>POSITION</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  HR
-                                </p>
-                              </td> -->
                             </div>
                           </tr>
                           <tr>
@@ -634,62 +526,10 @@
                                 <?php echo $supportDetails['buss_mailing_addr']?>
                                 </p>
                               </td>
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>POSITION</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  HR
-                                </p>
-                              </td> -->
                             </div>
                           </tr>
                           <tr>
                             <div style="display: flex">
-                              <!-- <td>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 27px;
-                                    padding-top: 10px;
-                                    padding-left: 22px;
-                                  "
-                                >
-                                  <b>PHONE</b>
-                                </p>
-                                <p
-                                  style="
-                                    font-size: 13px;
-                                    color: #202020;
-                                    margin: 0px;
-                                    line-height: 15px;
-
-                                    padding-left: 22px;
-                                  "
-                                >
-                                <?php //echo $residentialsDetails['phone']?>
-                                </p>
-                              </td> -->
                               <td>
                                 <p
                                   style="
@@ -746,18 +586,18 @@
                           </tr>
                           <tr>
                             <div style="display: flex">
-                              <!-- <td>
+                              <td>
                                 <p
                                   style="
-                                    font-size: 13px;
                                     color: #202020;
                                     margin: 0px;
                                     line-height: 27px;
-                                    padding-top: 10px;
+                                    padding-top: 16px;
                                     padding-left: 22px;
+                                    font-size: 13px;
                                   "
                                 >
-                                  <b>STATE</b>
+                                  <b>CITY</b>
                                 </p>
                                 <p
                                   style="
@@ -769,9 +609,13 @@
                                     padding-left: 22px;
                                   "
                                 >
-                               
+                                <?php echo ucwords($supportDetails['city'])?>
                                 </p>
-                              </td> -->
+                              </td>
+                            </div>
+                          </tr>
+                          <tr>
+                            <div style="display: flex">
                               <td>
                                 <p
                                   style="

@@ -163,17 +163,17 @@ $(document).ready(function(){
 		}
 	});
 
-	$('body').on('blur', 'input[name="zip_code"]', function () {
-		var formGroup = $(this).closest('.form-group');
-		formGroup.removeClass('has-error');
-		$(this).removeClass('has-error');
-		formGroup.find('.error').remove();
-		if (!isZipCode($(this))) {
-			formGroup.addClass('has-error');
-			$(this).addClass('has-error');
-			formGroup.append('<p class="error">Invalid zip code</p>');
-		}
-	});
+	// $('body').on('blur', 'input[name="zip_code"]', function () {
+	// 	var formGroup = $(this).closest('.form-group');
+	// 	formGroup.removeClass('has-error');
+	// 	$(this).removeClass('has-error');
+	// 	formGroup.find('.error').remove();
+	// 	if (!isZipCode($(this))) {
+	// 		formGroup.addClass('has-error');
+	// 		$(this).addClass('has-error');
+	// 		formGroup.append('<p class="error">Invalid zip code</p>');
+	// 	}
+	// });
 
 	// $('body').on('change', 'select[name="state"]', function () {
 	// 	var formGroup = $(this).closest('.form-group');
@@ -475,12 +475,12 @@ if (step == 2) {
 
 			}
 
-			if (!textVailidation(fieldArea.find('input[name="zip_code"]'))) {
-				isFormValid = false;
-			} else {
-				sessionStorage.setItem("zip_code", $('input[name="zip_code"]').val());
-				console.log(sessionStorage.getItem("zip_code"));
-			}
+			// if (!textVailidation(fieldArea.find('input[name="zip_code"]'))) {
+			// 	isFormValid = false;
+			// } else {
+			// 	sessionStorage.setItem("zip_code", $('input[name="zip_code"]').val());
+			// 	console.log(sessionStorage.getItem("zip_code"));
+			// }
 	}
 	}
 	if (step == 4) {
@@ -581,15 +581,15 @@ if (step == 2) {
 				sessionStorage.setItem("phone", $('input[name="phone"]').val());
 				console.log(sessionStorage.getItem("phone"));
 			}
-			if (!textVailidation(fieldArea.find('input[name="zip_code"]'))) {
-				isFormValid = false;
-			} if (!isZipCode(fieldArea.find('input[name="zip_code"]'))) {
-				console.log("Tester");
-				isFormValid = false;
-			} else {
-				sessionStorage.setItem("zip_code", $('input[name="zip_code"]').val());
-				console.log(sessionStorage.getItem("zip_code"));
-			}
+			// if (!textVailidation(fieldArea.find('input[name="zip_code"]'))) {
+			// 	isFormValid = false;
+			// } if (!isZipCode(fieldArea.find('input[name="zip_code"]'))) {
+			// 	console.log("Tester");
+			// 	isFormValid = false;
+			// } else {
+			// 	sessionStorage.setItem("zip_code", $('input[name="zip_code"]').val());
+			// 	console.log(sessionStorage.getItem("zip_code"));
+			// }
 			 sessionStorage.setItem("company_position", $('input[name="company_position"]').val());
 			if(!textVailidation(fieldArea.find('input[name="company_position"]'))){
 						isFormValid = false;
@@ -690,8 +690,8 @@ if (step == 2) {
 		let customer_buss_mailing_addr = sessionStorage.getItem("buss_mailing_addr");
 		$("span#customer_buss_mailing_addr").html('').html(customer_buss_mailing_addr);
 
-		let customer_zipcode = sessionStorage.getItem("zip_code");
-		$("span#customer_zipcode").html('').html(customer_zipcode);
+		// let customer_zipcode = sessionStorage.getItem("zip_code");
+		// $("span#customer_zipcode").html('').html(customer_zipcode);
 
 		let customer_time = sessionStorage.getItem("reach_time");
 		$("span#customer_time").html('').html(customer_time);
@@ -880,13 +880,13 @@ function phoneNumber(inputtxt) {
   }
 }
 
-function isZipCode(field) {
-	var fieldVal = field.val();
-	//var isValidZip = /(^\d{6}$)|(^\d{6}-\d{4}$)/.test(fieldVal);
-	var isValidZip = /^[A-Za-z0-9? ,_-]{3,9}$/.test(fieldVal);
-	return isValidZip;
+// function isZipCode(field) {
+// 	var fieldVal = field.val();
+// 	//var isValidZip = /(^\d{6}$)|(^\d{6}-\d{4}$)/.test(fieldVal);
+// 	var isValidZip = /^[A-Za-z0-9? ,_-]{3,9}$/.test(fieldVal);
+// 	return isValidZip;
 
-}
+// }
 
 function setFieldNatural(field){
 	var formGroup = field.closest('.form-group');

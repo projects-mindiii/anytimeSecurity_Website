@@ -145,11 +145,13 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
+
+								<!-- <div class="col-md-6 p-l-10 p-r-0 p-l-10-sm">
 									<div class="form-group">
 										<input type="text" name="zip_code" class="form-control custom-form" value="" maxlength="9" placeholder="Zip Code">
 									</div>
-								</div>
+								</div> -->
+
 							</div>
 							<div class="row">
 								<div class=" resultstep-4 resultstep-c">
@@ -222,11 +224,11 @@
 		return this.optional(element) || /^(\d+-?)+\d+$/.test(value);
 	}, 'Please enter a valid phone.');
 
-	$.validator.addMethod("isZipcode", function(value, element) {
-		// allow any non-whitespace characters as the host part
-		//return this.optional(element) || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
-		return this.optional(element) || /^[A-Za-z0-9? ,_-]{3,9}$/.test(value);
-	}, 'Please enter a valid zipcode.');
+	// $.validator.addMethod("isZipcode", function(value, element) {
+	// 	// allow any non-whitespace characters as the host part
+	// 	//return this.optional(element) || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
+	// 	return this.optional(element) || /^[A-Za-z0-9? ,_-]{3,9}$/.test(value);
+	// }, 'Please enter a valid zipcode.');
 
 	$(document).ready(function() {
 
@@ -246,10 +248,12 @@
 				country: 'required',
 				state: 'required',
 				city: 'required',
-				zip_code: {
-					required: true,
-					isZipcode: true
-				},
+
+				// zip_code: {
+				// 	required: true,
+				// 	isZipcode: true
+				// },
+
 				reach_date: 'required',
 				reach_time: 'required',
 			},
@@ -276,9 +280,11 @@
 				city: {
 					required: "City is required"
 				},
-				zip_code: {
-					required: "Zip Code is required"
-				},
+
+				// zip_code: {
+				// 	required: "Zip Code is required"
+				// },
+
 				reach_date: {
 					required: "Date is required"
 				},
