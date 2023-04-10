@@ -7,6 +7,7 @@ class Home extends CI_Controller
 		$this->load->database();
 		// Load PHPMailer library
 		$this->load->library('phpmailer_library');
+		$this->load->library('email_lib');
 	}
 
 	public function index()
@@ -101,7 +102,9 @@ class Home extends CI_Controller
 
 		$subject = 'From Anytime Security';
 
-		$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		//$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		$mail_res = $this->email_lib->send_email($email, $subject, $message);
+		
 
 		if ($mail_res) {
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
@@ -143,7 +146,8 @@ class Home extends CI_Controller
 
 		$subject = 'From Anytime Security';
 
-		$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		//$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		$mail_res = $this->email_lib->send_email($email, $subject, $message);
 
 		if ($mail_res) {
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
@@ -193,7 +197,8 @@ class Home extends CI_Controller
 
 		$subject = 'From Anytime Security';
 
-		$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		//$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		$mail_res = $this->email_lib->send_email($email, $subject, $message);
 
 		if ($mail_res) {
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
@@ -244,7 +249,8 @@ class Home extends CI_Controller
 
 		$subject = 'From Anytime Security';
 
-		$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		//$mail_res = $this->phpmailer_library->send_mail($email, $subject, $message);
+		$mail_res = $this->email_lib->send_email($email, $subject, $message);
 
 		if ($mail_res) {
 			echo json_encode(array('status' => true, 'message' => 'Form submitted successfully.'));
@@ -290,28 +296,9 @@ class Home extends CI_Controller
 	function send_test_email()
 	{
 
-		$config = array(
-			'protocol' => 'smtp',
-			'smtp_host' => getenv('MAIL_HOST'),
-			'smtp_port' => getenv('MAIL_PORT'),
-			'smtp_user' => getenv('MAIL_USERNAME'),
-			'smtp_pass' => getenv('MAIL_PASSWORD'),
-			'smtp_crypto' => 'ssl',
-			'mailtype' => 'html',
-			'charset' => 'iso-8859-1',
-			'wordwrap' => TRUE,
-			'crlf' => "\r\n"
-		);
-
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-		$this->email->from('noreply@anytimesecurity.ca');
-		$this->email->to('suraj.mindiii@gmail.com');
-		$this->email->subject('Test E-Mail');
-		$this->email->message('Test E-Mail');
-		$mail = $this->email->send();
-
+		$mail = $this->email_lib->send_email('suraj.mindiii@gmail.com', 'Test E-Mail', 'Test E-Mail');
 		print_r($mail);
+
 	}
 
 	function php_info()
