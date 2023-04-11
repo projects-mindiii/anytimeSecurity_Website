@@ -5,7 +5,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<meta name="description" content="Anytime Security">
   	<meta name="keyword" content="security">
-
+	<link rel="icon" href="<?php echo base_url('assets/images/favicon-icon.png')?>" type="image/icon" sizes="16x16">
   	<link rel="shortcut icon" href="<?php echo base_url('img/favicon.png')?>" type="image/x-icon" /> 
   	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   	<link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet" type="text/css">

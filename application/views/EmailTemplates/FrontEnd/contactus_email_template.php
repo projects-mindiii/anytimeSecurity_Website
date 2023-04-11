@@ -90,7 +90,7 @@
                             margin: 0px;
                           "
                         >
-                          <b>Contect Us</b>
+                          <b>Contact Us</b>
                         </h2>
                         <p
                           style="

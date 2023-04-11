@@ -669,6 +669,9 @@ if (step == 2) {
 		let customer_lname = sessionStorage.getItem("lname");
 		$("span#customer_lastname").html('').html(customer_lname);
 
+		let customer_position = sessionStorage.getItem("position");
+		$("span#customer_position").html('').html(customer_position);
+
 		let customer_email = sessionStorage.getItem("email");
 		$("span#customer_email").html('').html(customer_email);
 
@@ -723,8 +726,8 @@ if (step == 2) {
 		$("span#customer_service_type").html('').html(" " + resservice);
 		// ***********************************************
 
-		let company_position = sessionStorage.getItem("company_position");
-		$("span#company_position").html('').html(company_position);	
+		// let company_position = sessionStorage.getItem("company_position");
+		// $("span#company_position").html('').html(company_position);	
 	}
 
 	if(step == 6) {
