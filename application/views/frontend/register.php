@@ -525,13 +525,13 @@
                   </p>
                   <span class="font-2x text-theme-color step-text-6" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-6" style="display:none;"><span>STEP #6/8</span></br>
-                     Review your changes1</p>
+                     Review your changes</p>
                   <span class="font-2x text-theme-color step-text-7" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-7" style="display:none;"><span>STEP #7/8</span></br>
-                     Review your changes2</p>
+                     Review your changes</p>
                   <span class="font-2x text-theme-color step-text-8" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-8" style="display:none;"><span>STEP #8/8</span></br>
-                     Review your changes3</p>
+                     Review your changes</p>
 
                </div>
 
@@ -1157,7 +1157,7 @@
                            <div class="form-group">
                               <div class="fnClod">
                                  <h3>Position</h3>
-                                 <span>Hr</span>
+                                 <span id="customer_position">Hr</span>
                               </div>
                            </div>
                            <div class="form-group">

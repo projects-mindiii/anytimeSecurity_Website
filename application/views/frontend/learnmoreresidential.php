@@ -523,7 +523,7 @@
                </p>
                <span class="font-2x text-theme-color step-text-7" style="display:none;">Confirm & Review</span>
                <p class="font-4x text-theme-color step-text-7" style="display:none;">
-                  Review your changes3 </br><span>STEP #7/7</span></p>
+                  Review your changes </br><span>STEP #7/7</span></p>
             </div>
          </div>
          <div class="col-md-12">
