@@ -15,7 +15,7 @@
 				<ul id="footer-navbar-custom-style">
 					<li><a href="<?php echo base_url('') ?>#aboutus">About</a></li>
 					<li><a href="<?php echo base_url('privacy-policy') ?>">Privacy</a></li>
-					<li><a href="<?php echo base_url('learn-more') ?>">Get Quote</a></li>
+					<li><a href="<?php echo base_url('') ?>">Get Quote</a></li>
 					<li><a href="<?php echo base_url('') ?>#solution-provider">Solution Providers</a></li>
 					<li><a href="<?php echo base_url('contact-us') ?>">Contact</a></li>
 				</ul>
@@ -34,7 +34,7 @@
 		<button class="btn btn-o social-btn btn-white m-t-20">
 			<i class="fa fa-google-plus"></i>
 		</button>
-		<p class="m-t-50">Copyright 2018. AnytimeSecurity.com, All right reserved </p> 
+		<p class="m-t-50">Copyright <?=(date('Y')>2013?' - '.date('Y'):'')?>. AnytimeSecurity.com, All right reserved </p> 
 	</div>
 	
 </footer>
