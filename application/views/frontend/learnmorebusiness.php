@@ -530,13 +530,13 @@
                      Review your changes </br><span>STEP #5/7</span></p> -->
                   <span class="font-2x text-theme-color step-text-5" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-5" style="display:none;">
-                     Review your changes1 </br><span>STEP #5/7</span></p>
+                     Review your changes </br><span>STEP #5/7</span></p>
                   <span class="font-2x text-theme-color step-text-6" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-6" style="display:none;">
-                     Review your changes2 </br><span>STEP #6/7</span></p>
+                     Review your changes </br><span>STEP #6/7</span></p>
                   <span class="font-2x text-theme-color step-text-7" style="display:none;">Confirm & Review</span>
                   <p class="font-4x text-theme-color step-text-7" style="display:none;">
-                     Review your changes3 </br><span>STEP #7/7</span></p>
+                     Review your changes </br><span>STEP #7/7</span></p>
 
                </div>
 
