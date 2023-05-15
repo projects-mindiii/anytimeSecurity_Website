@@ -69,7 +69,7 @@
 		<div class="contact-area">
 			<div class="row">
 				<div align="center">
-					<span class="font-2x text-theme-color">Contact Us</span>
+					<span class="font-2x text-theme-color">Contact Us - AnyTime Security</span>
 				</div>
 				<div align="center">
 				</div>
