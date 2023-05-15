@@ -23,8 +23,6 @@ class Home extends CI_Controller
 	public function submit_form()
 	{
 
-		// process the form data here
-
 		// load the thank you view file as a popup
 		$this->load->view('thank_you');
 	}
@@ -51,10 +49,6 @@ class Home extends CI_Controller
 	public function learnMoreBusiness()
 	{
 		$data['countries'] = $this->db->from('countries')->order_by("name", "asc")->get()->result_array();
-		// echo '<pre>';
-		// print_r($countries);
-		// echo '<pre>'; 
-		// exit;
 		$data['pageTitle'] = "AnyTime Security | LearnMore Business";
 		$this->load->view('frontend_includes/header', $data);
 		$this->load->view('frontend/learnmorebusiness', $data);
@@ -74,7 +68,6 @@ class Home extends CI_Controller
 	// Send Business Email
 	function sendBusinessEmail()
 	{
-
 
 		$fname = $this->input->post('fname');
 		$lname = $this->input->post('lname');
